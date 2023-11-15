@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+
+  cartmanagementservice:
+    image: ${DOCKER_REGISTRY-}cartmanagementservice
+    build:
+      context: .
+      dockerfile: ../ProductService/CartManagementService/Dockerfile
+
+
+  productservice:
+    image: ${DOCKER_REGISTRY-}productservice
+    build:
+      context: .
+      dockerfile: ProductService/Dockerfile
+
+  authenticationservice:
+    image: ${DOCKER_REGISTRY-}authenticationservice
+    build:
+      context: .
+      dockerfile: ../TestApiService/TestApiService/Dockerfile
+

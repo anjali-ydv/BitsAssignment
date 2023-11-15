@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{7816A459-D2BF-4D85-83E0-756734905FD1}|Default">
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.CartManagementService PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.ItemProperties.ProductService PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProductService/Controllers/ProductController.cs">
+    <Files>
+      <File FileName="../TestApiService/TestApiService/appsettings.json" />
+      <File FileName="../TestApiService/TestApiService/Controllers/AuthenticationController.cs" Line="49" Column="10" />
+      <File FileName="ProductService/Controllers/ProductController.cs" Line="52" Column="6" />
+      <File FileName="../TestApiService/TestApiService/Program.cs" />
+      <File FileName="../TestApiService/TestApiService/AuthenticationService.csproj" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Option id="ShowAllFiles" value="True" />
+          <Node name="ProductService" expanded="True">
+            <Node name="AuthenticationService" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+            </Node>
+            <Node name="ProductService" expanded="True">
+              <Node name="Controllers" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.AuthenticationService PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>
