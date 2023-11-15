@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-service-webapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: product-service-app
+  template:
+    metadata:
+      labels:
+        app: product-service-app
+    spec:
+      containers:
+        - name: product-service-app
+          image: 2022mt93071/product-service:latest
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 5001
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: product-service-webapp
+spec:
+  selector:
+    app: product-service-app
+  ports:
+    - port: 6001
+      targetPort: 5001
+  type: LoadBalancer
+

@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cart-service-webapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cart-service-app
+  template:
+    metadata:
+      labels:
+        app: cart-service-app
+    spec:
+      containers:
+        - name: cart-service-app
+          image: 2022mt93071/cart-service:latest
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 5002
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cart-service-webapp
+spec:
+  selector:
+    app: cart-service-app
+  ports:
+    - port: 6002
+      targetPort: 5002
+  type: LoadBalancer
+

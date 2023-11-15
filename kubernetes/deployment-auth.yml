@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: authentication-service-webapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: authentication-service-app
+  template:
+    metadata:
+      labels:
+        app: authentication-service-app
+    spec:
+      containers:
+        - name: authentication-service-app
+          image: 2022mt93071/authentication-service:latest
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 5000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: authentication-service-webapp
+spec:
+  selector:
+    app: authentication-service-app
+  ports:
+    - port: 6000
+      targetPort: 5000
+  type: LoadBalancer
+
